@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Catan Generator</title>
+        <meta name="description" content="Particle Simulation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="img/catanIcon3.png">
+    </head>
+    <body>
+
+        <div id="catanApp">
+            <h1>Catan Map Generator</h1>
+
+            <div class="canvasContainer">
+                <canvas id="catanBoard"></canvas>
+            </div>
+
+           <div class="row">
+               <p>Generate new board elements</p>
+                <div class="rowOptions">
+                    <div id="button1" class="button" onclick="generateMap(true, true)">Random Board</div>
+                    <div id="button2" class="button" onclick="generateMap(true, false)">Numbers only</div>
+                    <div id="button3" class="button" onclick="generateMap(false, true)">Tiles only</div>
+                </div>
+           </div>
+
+            <div class="row">
+                <p>Robber spawn place</p>
+                <div class="rowOptions">
+                    <div id="all" class="robberOption" onclick="selectRobberPlace(this.id, 'all')">all</div>
+                    <div id="outer" class="robberOption" onclick="selectRobberPlace(this.id, 'outer')">Outer ring</div>
+                    <div id="middle" class="robberOption" onclick="selectRobberPlace(this.id, 'middle')">middle ring</div>
+                    <div id="inner" class="robberOption" onclick="selectRobberPlace(this.id, 'inner')">inner ring</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <p>Number options</p>
+                <p>pips indicate how good a spot on the board is (1-15)</p>
+                <div class="rowOptions">
+                    <div id="balance0" class="numberOption" onclick="selectBalanced(this.id, 1, 15)">all</div>
+                    <div id="balance1" class="numberOption" onclick="selectBalanced(this.id, 1, 12)">pips&lt13</div>
+                    <div id="balance2" class="numberOption" onclick="selectBalanced(this.id, 6, 15)">pips&gt5</div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="catan.js"></script>
+
+    </body>
+</html>

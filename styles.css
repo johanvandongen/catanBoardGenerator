@@ -1,0 +1,107 @@
+:root {
+    --color-theme: #4fa6eb;
+    --width-components: 60%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+}
+/* -------- 
+ Catan App
+-------- */
+#catanApp {
+    border: 1px solid black;
+    width: 40%;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#catanApp h1{
+    color: var(--color-theme);
+}
+
+/* --------
+ Canvas
+-------- */
+.canvasContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: var(--width-components);
+    aspect-ratio: 1;
+    border: 1px solid var(--color-theme);
+    border-radius: 0.5rem;
+}
+
+/* -------------------
+General options layout
+------------------- */
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--width-components);
+}
+.rowOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* -----------
+ Option buttons
+----------- */
+.button:hover, .robberOption:hover, .numberOption:hover {
+    transition: 0.5s;
+    border: 5px solid var(--color-theme) !important;
+}
+.button, .robberOption, .numberOption {
+    border: 5px solid #eee;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+/* -----------
+ Robber Options 
+----------- */
+
+/* -----------
+Number options 
+----------- */
+
+/* --------------------
+media queries
+-------------------- */
+@media screen and (max-width: 425px) {
+	:root {
+		--width-components: 90%;
+	}
+    #catanApp {
+        width: 100%;
+    }
+    #catanApp h1{
+        font-size: 25px;
+    }
+    .button, .robberOption, .numberOption {
+        padding: 0.6rem;
+    }
+}
+@media screen and (max-width: 320px) {
+	:root {
+		--width-components: 90%;
+	}
+    #catanApp {
+        width: 100%;
+    }
+}
